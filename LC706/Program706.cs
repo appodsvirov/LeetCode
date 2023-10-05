@@ -15,12 +15,12 @@ public class MyHashMap
 {
     private int?[] Values {  get; set; }
 
-    const int capacity = 2048;
+    const int capacity = 1000000;
     public bool ContainsKey(int key) => Values[KeyHashCode(key)] != null; 
     
     public int KeyHashCode(int key)
     {
-        return Math.Abs( key.ToString().GetHashCode()) % capacity;
+        return Math.Abs( key.GetHashCode()) % capacity;
     }
     public MyHashMap()
     {
