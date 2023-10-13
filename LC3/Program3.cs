@@ -15,7 +15,7 @@ public class Solution
             c =  s[i]; 
             if (dict.ContainsKey(c) && dict[c] >= first )
             {
-                tmpLength = tmpLength - dict[c];
+                tmpLength = tmpLength - dict[c];    
                 first = i - tmpLength + 1;
                 dict[c] = i;
             }
