@@ -2,7 +2,7 @@
 using System.Text;
 
 Solution s = new Solution();
-Console.WriteLine(s.LengthOfLongestSubstring("tmmzuxt"));
+Console.WriteLine(s.LengthOfLongestSubstring("abcabcbb"));
 public class Solution
 {
     public int LengthOfLongestSubstring(string s)
@@ -12,23 +12,52 @@ public class Solution
         Dictionary<char, int> dict = new Dictionary<char, int>();
         for(int i = 0; i < s.Length; i++)
         {
-            c =  s[i]; 
-            if (dict.ContainsKey(c) && dict[c] >= first )
+            c = s[i];
+            if (dict.ContainsKey(c))
             {
-                tmpLength = tmpLength - dict[c];    
-                first = i - tmpLength + 1;
-                dict[c] = i;
+                if (dict[c] < first)
+                {
+                    dict[c] = i;
+                    tmpLength++;
+
+                    if (tmpLength > maxLength)
+                    {
+                        maxLength = tmpLength;
+                    }
+                }
+                else
+                {
+                    first = dict[c] + 1;
+                    tmpLength = i - dict[c];
+                    dict[c] = i;
+                }
             }
             else
             {
                 dict[c] = i;
                 tmpLength++;
 
-                if(tmpLength > maxLength)
+                if (tmpLength > maxLength)
                 {
                     maxLength = tmpLength;
                 }
             }
+            //if (dict.ContainsKey(c) && dict[c] >= first )
+            //{
+            //    tmpLength = tmpLength - dict[c];    
+            //    first = i - tmpLength + 1;
+            //    dict[c] = i;
+            //}
+            //else
+            //{
+            //    dict[c] = i;
+            //    tmpLength++;
+
+            //    if(tmpLength > maxLength)
+            //    {
+            //        maxLength = tmpLength;
+            //    }
+            //}
 
         }
         return maxLength;
