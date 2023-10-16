@@ -42,22 +42,6 @@ public class Solution
                     maxLength = tmpLength;
                 }
             }
-            //if (dict.ContainsKey(c) && dict[c] >= first )
-            //{
-            //    tmpLength = tmpLength - dict[c];    
-            //    first = i - tmpLength + 1;
-            //    dict[c] = i;
-            //}
-            //else
-            //{
-            //    dict[c] = i;
-            //    tmpLength++;
-
-            //    if(tmpLength > maxLength)
-            //    {
-            //        maxLength = tmpLength;
-            //    }
-            //}
 
         }
         return maxLength;
