@@ -7,6 +7,7 @@ public class Solution
     {
         int[] result = new int[n + 1];
         result[0] = 0;
+        if(n==0) return result;
         result[1] = 1;
         for (int i = 2, j = 2; i <= n; i++)
         {
