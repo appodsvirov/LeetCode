@@ -47,7 +47,7 @@ public class Solution
             scan[index] = true;
             return true;
         }
-        if (index >= max) return false;
+        if (len >= max) return false;
         bool result = searchСycles(treeNodes, scan, treeNodes[index], len+1, ref max);
         if (result) scan[index] = true;
         return result;
