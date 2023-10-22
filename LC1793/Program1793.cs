@@ -16,6 +16,7 @@ public class Solution
             if (left == 0 || (right < nums.Length - 1 && nums[right + 1] > nums[left - 1]))
             {
                 right++;
+                // Ранее мы посчитали minValue для предыдущией subArray, а сейчас считаем для новой
                 minValue = Math.Min(minValue, nums[right]);
             }
             else
